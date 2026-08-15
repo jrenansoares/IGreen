@@ -33,7 +33,7 @@ export function Ambassador() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight"
               >
-                "Com a iGreen Seguros, não tem enrolação. Seu patrimônio tá protegido."
+                "Com a iGreen Seguros, não tem enrolação. Seu patrimônio tá 100% segurado."
               </motion.h2>
               
               <motion.p 
@@ -43,7 +43,7 @@ export function Ambassador() {
                 transition={{ delay: 0.2 }}
                 className="text-xl text-green-light/80 mb-8 max-w-lg mx-auto md:mx-0"
               >
-                Gusttavo Lima escolheu a proteção inteligente que cabe no bolso de todos os brasileiros. Seguro de verdade, sem consulta ao SPC/Serasa.
+                Gusttavo Lima escolheu o seguro inteligente com garantia de seguradora SUSEP que cabe no bolso de todos os brasileiros. Seguro de verdade, sem consulta ao SPC/Serasa.
               </motion.p>
               
               <motion.button 
@@ -73,7 +73,7 @@ export function Ambassador() {
                     // Fallback se a imagem não estiver disponível
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
+                  }} 
                 />
                 <div className="hidden text-center text-white absolute inset-0 flex-col items-center justify-center bg-green-dark">
                   <Star size={64} className="text-yellow-solar mx-auto mb-2" fill="currentColor" />

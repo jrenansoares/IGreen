@@ -15,7 +15,7 @@ export function Termos() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">1. Condições Gerais</h2>
               <p>
-                O presente documento ("Termos de Uso") estabelece as condições gerais para utilização deste site, operado por <strong>J. Renan M. S.</strong> (CNPJ 54.730.192/0001-10), na qualidade de Licenciado Autorizado independente da iGreen Seguros. 
+                O presente documento ("Termos de Uso") estabelece as condições gerais para utilização deste site, operado por <strong>J. Renan M. S.</strong> (CNPJ 54.730.192/0001-10), na qualidade de Licenciado independente da iGreen. 
                 Ao navegar neste site e preencher formulários de cotação, você concorda plenamente e sem reservas com estes Termos de Uso.
               </p>
             </section>
@@ -23,10 +23,10 @@ export function Termos() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">2. Natureza dos Serviços</h2>
               <p>
-                Este site atua como um canal de captação, cotação e direcionamento de propostas de seguro automóvel e proteções veiculares. Os produtos comercializados por intermédio desta plataforma são subscritos, emitidos e garantidos integralmente pela <strong>BP Seguradora S.A.</strong> (Código Susep 01546 | CNPJ 50.180.527/0001-13).
+                Este site atua como um canal de captação, cotação e direcionamento de propostas de seguro de automóvel. Os produtos de seguro comercializados por intermédio desta plataforma são subscritos, emitidos e garantidos integralmente pela <strong>BP Seguradora S.A.</strong> (Código Susep 01546 | CNPJ 50.180.527/0001-13).
               </p>
               <p className="mt-2">
-                As cotações fornecidas têm caráter informativo inicial e estão sujeitas à análise de aceitação de risco por parte da seguradora, podendo sofrer variações de acordo com a vistoria do veículo e perfil (quando aplicável à modalidade do seguro).
+                As cotações fornecidas têm caráter informativo inicial e estão sujeitas à emissão e aceitação da proposta pela seguradora, conforme os parâmetros oficiais e tabela FIPE.
               </p>
             </section>
 
@@ -34,8 +34,8 @@ export function Termos() {
               <h2 className="text-xl font-bold text-gray-800 mb-3">3. Responsabilidades do Usuário</h2>
               <p>O usuário concorda em:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
-                <li>Fornecer informações verdadeiras, precisas, atuais e completas no momento da cotação.</li>
-                <li>Estar ciente de que a prestação de informações falsas ou omissão de dados pode acarretar a recusa do seguro ou a negativa de pagamento de sinistro, conforme legislação vigente.</li>
+                <li>Fornecer informações verdadeiras, precisas, atuais e completas no momento da cotação do seguro.</li>
+                <li>Estar ciente de que a prestação de informações falsas ou omissão de dados pode acarretar a recusa do seguro ou a negativa de indenização de sinistro, conforme legislação de seguros vigente.</li>
                 <li>Não utilizar a plataforma para fins ilícitos, fraudulentos ou de forma que possa danificar a operação tecnológica do sistema.</li>
               </ul>
             </section>
@@ -43,14 +43,14 @@ export function Termos() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">4. Propriedade Intelectual</h2>
               <p>
-                As marcas, logotipos, nomes comerciais, imagens, layouts e conteúdos exibidos neste site relacionados à "iGreen Seguros" e "BP Seguradora" são de propriedade exclusiva destas respectivas empresas e estão sendo utilizados sob licença ou autorização de parceria comercial. É terminantemente proibida a reprodução não autorizada de qualquer conteúdo.
+                As marcas, logotipos, nomes comerciais, imagens, layouts e conteúdos exibidos neste site relacionados à "iGreen" e "BP Seguradora" são de propriedade exclusiva destas respectivas empresas e estão sendo utilizados sob autorização de parceria comercial e licenciamento. É terminantemente proibida a reprodução não autorizada de qualquer conteúdo.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">5. Independência do Licenciado</h2>
               <p>
-                Fica claro e acordado que o administrador deste site é um <strong>Licenciado Autorizado Independente</strong>. O atendimento comercial inicial é prestado pelo licenciado, porém o acionamento de sinistros, assistências 24 horas e responsabilidades sobre a apólice devem ser tratados diretamente nos canais oficiais da BP Seguradora.
+                Fica claro e acordado que o administrador deste site é um <strong>Licenciado Independente da iGreen</strong>. O atendimento comercial inicial e apresentação das soluções é realizado pelo licenciado, porém o acionamento de sinistros, assistências 24 horas e regulação de apólices são garantidos diretamente pela BP Seguradora S.A.
               </p>
             </section>
 

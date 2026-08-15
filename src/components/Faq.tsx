@@ -6,23 +6,23 @@ export function Faq() {
   const faqs = [
     {
       q: "A iGreen Seguros faz análise de perfil ou consulta SPC/Serasa?",
-      a: "Não! Acreditamos que a proteção deve ser acessível. O valor do seguro é baseado apenas no modelo do veículo (Tabela FIPE), não importando sua idade, CEP ou restrições de crédito."
+      a: "Não! Acreditamos que o seguro auto deve ser acessível e sem burocracia. O valor do seguro é baseado exclusivamente no modelo do veículo (Tabela FIPE), sem análise de condutor, CEP de pernoite ou restrições cadastrais."
     },
     {
       q: "Como funciona a indenização de 100% da Tabela FIPE?",
-      a: "Em caso de roubo ou furto do seu veículo, e caso ele não seja recuperado, a BP Seguradora garante o pagamento de 100% do valor do veículo com base na Tabela FIPE do mês do sinistro."
+      a: "Em caso de roubo ou furto do seu veículo, e caso ele não seja recuperado, a BP Seguradora garante o pagamento de 100% do valor do veículo com base na Tabela FIPE oficial do mês do sinistro."
     },
     {
       q: "O seguro cobre batidas e acidentes (Colisão)?",
-      a: "O foco do nosso seguro principal é a cobertura contra Roubo e Furto, que é o maior risco para os brasileiros, além da Assistência 24h completa (Guincho, pane, chaveiro). Consulte nossos especialistas sobre adicionais disponíveis para o seu perfil."
+      a: "O foco do nosso seguro principal é a cobertura contra Roubo e Furto, que é o maior risco para os brasileiros, além da Assistência 24h completa (Guincho, socorro mecânico, chaveiro). Consulte nossos especialistas sobre coberturas adicionais disponíveis para o seu veículo."
     },
     {
       q: "A iGreen Seguros é confiável?",
-      a: "Sim! Somos parceiros e garantidos pela BP Seguradora, uma instituição totalmente regulamentada pela SUSEP (Superintendência de Seguros Privados). O cantor Gusttavo Lima também confia e é nosso embaixador oficial."
+      a: "Sim! Trabalhamos com apólices oficiais emitidas e garantidas pela BP Seguradora, uma seguradora totalmente registrada e fiscalizada pela SUSEP (Superintendência de Seguros Privados). O cantor Gusttavo Lima também confia e é nosso embaixador oficial."
     },
     {
       q: "Como funciona a Assistência 24 Horas?",
-      a: "Você tem direito a guincho, socorro mecânico (pane seca e elétrica), chaveiro e troca de pneu. Tudo isso disponível em qualquer lugar do Brasil, bastando ligar para a central de atendimento 0800."
+      a: "Você tem direito a guincho, socorro mecânico (pane seca e elétrica), chaveiro e troca de pneu com abrangência em todo o território nacional."
     }
   ];
 
@@ -36,10 +36,10 @@ export function Faq() {
         <div className="mb-16 md:mb-20 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-light border border-gray-200 mb-5">
             <ShieldCheck className="text-green-main" size={20} />
-            <span className="font-semibold text-text-dark text-sm sm:text-base">Segurança e Confiabilidade SUSEP</span>
+            <span className="font-semibold text-text-dark text-sm sm:text-base">Seguro Registrado na SUSEP</span>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-text-dark mb-8 max-w-2xl mx-auto leading-tight">
-            Todas as respostas que você precisa para rodar tranquilo.
+            Todas as respostas que você precisa para rodar tranquilo e segurado.
           </h2>
           
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80">
@@ -53,7 +53,7 @@ export function Faq() {
             </div>
             <div className="flex flex-col items-center gap-2">
               <ShieldCheck size={32} className="text-bp-purple" />
-              <span className="text-sm font-bold">100% Regulamentado</span>
+              <span className="text-sm font-bold">Seguradora SUSEP 01546</span>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Tecnologia veicular revolucionária e seguro contra roubo, furto, colisão e assistência 24h sem burocracia. Até 3x mais barato que seguros tradicionais.
+              Seguro auto definitivo contra roubo, furto, colisão e assistência 24h sem burocracia, garantido por seguradora SUSEP. Até 3x mais barato que seguros tradicionais.
             </p>
           </div>
 
@@ -65,9 +65,9 @@ export function Footer() {
 
           {/* Column 4: Licenciado Autorizado */}
           <div>
-            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Licenciado Autorizado</h3>
+            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Licenciado iGreen</h3>
             <p className="text-gray-300 text-sm leading-relaxed text-justify">
-              Este site pertence a um Licenciado Autorizado da iGreen Seguros. As imagens, marcas e informações exibidas são de propriedade da iGreen e BP Seguradora e usadas de acordo com as diretrizes de parceria. Seguro auto oferecido pela iGreen Seguros, licenciado autorizado, com produtos subscritos pela BP Seguradora S.A., CNPJ 50.180.527/0001-13, supervisionada pela SUSEP.
+              Este site pertence a um Licenciado da iGreen, ecossistema completo de soluções inovadoras em energia sustentável, telecomunicações e seguros. A solução de seguro auto apresentada nesta página é comercializada por intermédio da iGreen Seguros, com apólices subscritas e emitidas pela BP Seguradora S.A., CNPJ 50.180.527/0001-13, seguradora oficial e regulamentada pela SUSEP (Código 01546).
             </p>
           </div>
         </div>
@@ -75,11 +75,11 @@ export function Footer() {
         {/* Legal Disclaimers & Copyright */}
         <div className="pt-8 border-t border-gray-600/50">
           <p className="text-gray-400 text-xs leading-relaxed text-justify mb-8">
-            Este site é independente, de propriedade e responsabilidade de J. Renan M. S., inscrito no CNPJ 54.730.192/0001-10. A comercialização dos produtos de proteção é realizada por intermédio da iGreen Seguros. Operado por BP Seguradora S.A. | Código Susep 01546 | CNPJ 50.180.527/0001-13. A BP Seguradora S.A. é uma seguradora autorizada pela Superintendência de Seguros Privados (SUSEP), atuando de forma definitiva no segmento. A iGreen Seguros e a BP Seguradora fazem parte da nossa rede de soluções para garantir a sua tranquilidade.
+            Este site é independente, de propriedade e responsabilidade de J. Renan M. S., inscrito no CNPJ 54.730.192/0001-10, atuando como Licenciado da iGreen. A comercialização dos seguros de automóvel é realizada por intermédio da iGreen Seguros. Operado por BP Seguradora S.A. | Código Susep 01546 | CNPJ 50.180.527/0001-13. A BP Seguradora S.A. é uma seguradora autorizada pela Superintendência de Seguros Privados (SUSEP), atuando de forma definitiva no mercado segurador nacional.
           </p>
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs font-medium">
-            <p>&copy; {new Date().getFullYear()} iGreen Seguros - Licenciado Autorizado. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} iGreen - Licenciado Autorizado. Todos os direitos reservados.</p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                <Link to="/privacidade" className="hover:text-white transition-colors">LGPD e Privacidade</Link>
                <span className="hidden md:inline text-gray-600">|</span>

@@ -101,7 +101,7 @@ export function QuoteForm() {
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick("pos_cotacao");
-    const baseMessage = `Olá! Acabei de fazer uma cotação no site da iGreen Seguros para a placa ${formData.plate} (${formData.vehicleType}) e gostaria de finalizar a contratação. Meu nome é ${formData.name}.`;
+    const baseMessage = `Olá! Acabei de fazer uma cotação no site da iGreen Seguros para a placa ${formData.plate} (${formData.vehicleType}) e gostaria de finalizar a contratação do meu seguro. Meu nome é ${formData.name}.`;
     const fullMessage = buildWhatsAppMessageWithUtm(baseMessage);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -119,13 +119,13 @@ export function QuoteForm() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white mb-5 border border-white/20 backdrop-blur-sm">
             <ShieldCheck size={18} className="text-bp-orange shrink-0" />
-            <span className="font-semibold text-sm">Cotação 100% Online e Gratuita</span>
+            <span className="font-semibold text-sm">Cotação de Seguro 100% Online e Gratuita</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight tracking-tight">
             Descubra o valor do seu seguro agora mesmo
           </h2>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Sem burocracia, sem análise de perfil. Informe a placa do seu veículo e receba sua proposta em instantes.
+            Sem burocracia, sem análise de perfil. Informe a placa do seu veículo e receba sua proposta de seguro auto em instantes.
           </p>
         </div>
 
@@ -245,7 +245,7 @@ export function QuoteForm() {
               >
                 <Loader2 size={46} className="text-green-main animate-spin mb-5" />
                 <h3 className="text-2xl font-bold text-green-dark mb-2">Consultando tabela veicular...</h3>
-                <p className="text-text-dark/70 text-sm sm:text-base">Localizando as melhores condições para o seu veículo.</p>
+                <p className="text-text-dark/70 text-sm sm:text-base">Localizando as melhores condições de seguro para o seu veículo.</p>
               </motion.div>
             )}
 
@@ -263,7 +263,7 @@ export function QuoteForm() {
                 <div className="text-center mb-6 bg-green-light p-5 rounded-2xl border border-green-main/20">
                   <h3 className="text-xl sm:text-2xl font-bold text-green-dark mb-2">Veículo Encontrado!</h3>
                   <p className="text-text-dark font-medium text-sm sm:text-base">
-                    Temos uma proposta de proteção personalizada para a placa <strong className="text-green-dark font-black">{formData.plate}</strong>.
+                    Temos uma proposta de seguro auto personalizada para a placa <strong className="text-green-dark font-black">{formData.plate}</strong>.
                   </p>
                   <p className="text-xs sm:text-sm text-text-dark/70 mt-2">
                     Informe seu nome e WhatsApp para visualizar valores e coberturas:
@@ -366,7 +366,7 @@ export function QuoteForm() {
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-green-dark mb-3">Tudo pronto!</h3>
                 <p className="text-base sm:text-lg text-text-dark/80 mb-7 max-w-md leading-relaxed">
-                  Sua proposta para a placa <strong className="text-green-dark">{formData.plate}</strong> foi gerada. Fale com nosso consultor no WhatsApp para consultar valores e ativar sua proteção.
+                  Sua proposta para a placa <strong className="text-green-dark">{formData.plate}</strong> foi gerada. Fale com nosso consultor no WhatsApp para consultar valores e ativar sua apólice de seguro.
                 </p>
                 
                 <button 
@@ -376,7 +376,7 @@ export function QuoteForm() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
-                  <span>ATIVAR PROTEÇÃO NO WHATSAPP</span>
+                  <span>CONTRATAR SEGURO NO WHATSAPP</span>
                 </button>
               </motion.div>
             )}

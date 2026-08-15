@@ -15,13 +15,13 @@ export function Privacidade() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">1. Introdução</h2>
               <p>
-                Esta Política de Privacidade descreve como <strong>J. Renan M. S.</strong> (CNPJ 54.730.192/0001-10), atuando como Licenciado Autorizado da iGreen Seguros, coleta, usa, compartilha e protege as informações pessoais de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).
+                Esta Política de Privacidade descreve como <strong>J. Renan M. S.</strong> (CNPJ 54.730.192/0001-10), atuando como Licenciado da iGreen, coleta, usa, compartilha e protege as informações pessoais de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">2. Dados Coletados</h2>
-              <p>Coletamos as informações estritamente necessárias para a prestação dos nossos serviços de cotação e intermediação de seguro auto. Isso pode incluir:</p>
+              <p>Coletamos as informações estritamente necessárias para a prestação dos nossos serviços de cotação e intermediação de seguro auto e soluções iGreen. Isso pode incluir:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li><strong>Dados de Identificação:</strong> Nome completo, CPF, e-mail e telefone de contato.</li>
                 <li><strong>Dados do Veículo:</strong> Placa, marca, modelo, ano de fabricação e chassi.</li>
@@ -33,8 +33,8 @@ export function Privacidade() {
               <h2 className="text-xl font-bold text-gray-800 mb-3">3. Finalidade do Uso dos Dados</h2>
               <p>Os dados coletados são utilizados exclusivamente para as seguintes finalidades:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
-                <li>Realizar cotações precisas de seguro auto e proteções veiculares.</li>
-                <li>Viabilizar a contratação e emissão de apólices junto à BP Seguradora S.A.</li>
+                <li>Realizar cotações precisas de seguro auto.</li>
+                <li>Viabilizar a contratação e emissão de apólices de seguro junto à BP Seguradora S.A.</li>
                 <li>Entrar em contato para atendimento, suporte e envio de propostas solicitadas.</li>
                 <li>Cumprir obrigações legais e regulatórias da SUSEP.</li>
               </ul>
@@ -43,7 +43,7 @@ export function Privacidade() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">4. Compartilhamento de Dados</h2>
               <p>
-                Como atuamos como Licenciados Autorizados, suas informações são compartilhadas de forma segura com a <strong>iGreen Seguros</strong> e a <strong>BP Seguradora S.A.</strong> (CNPJ 50.180.527/0001-13) exclusivamente para fins de precificação, análise de risco, emissão de apólice e prestação dos serviços de assistência 24h. 
+                Como atuamos como Licenciados, suas informações são compartilhadas de forma segura com a <strong>iGreen Seguros</strong> e a <strong>BP Seguradora S.A.</strong> (CNPJ 50.180.527/0001-13) exclusivamente para fins de precificação, emissão de apólice de seguro e prestação dos serviços de assistência 24h. 
                 <br /><br />
                 Nós <strong>nunca vendemos, alugamos ou comercializamos</strong> seus dados pessoais para terceiros não relacionados à prestação do serviço contratado.
               </p>
