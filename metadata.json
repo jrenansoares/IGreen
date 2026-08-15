@@ -1,6 +1,6 @@
 {
   "name": "iGreen Seguros",
-  "description": "Landing page de captação de leads para seguro auto da iGreen Seguros, garantido pela BP Seguradora.",
+  "description": "Portal de soluções iGreen com navegação para iGreen Seguros (Seguro Auto BP Seguradora), iGreen Energy (Energia Solar) e iGreen Telecom (5G).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

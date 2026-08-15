@@ -32,11 +32,13 @@ export function Footer() {
 
           {/* Column 2: Navegação */}
           <div>
-            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Navegação</h3>
-            <ul className="space-y-4 text-gray-300 text-sm font-medium">
-              <li><Link to="/" className="hover:text-white transition-colors">Página Inicial</Link></li>
-              <li><Link to="/#cotacao" className="hover:text-white transition-colors">Cotação Online</Link></li>
-              <li><Link to="/#diferenciais" className="hover:text-white transition-colors">Diferenciais</Link></li>
+            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Soluções & Navegação</h3>
+            <ul className="space-y-3 text-gray-300 text-sm font-medium">
+              <li><Link to="/" className="hover:text-white transition-colors">Início (Ecossistema)</Link></li>
+              <li><Link to="/seguros" className="hover:text-white transition-colors">iGreen Seguros (Auto)</Link></li>
+              <li><Link to="/energia" className="hover:text-white transition-colors">iGreen Energy (Solar)</Link></li>
+              <li><Link to="/telecom" className="hover:text-white transition-colors">iGreen Telecom (5G)</Link></li>
+              <li><Link to="/seguros#cotacao" className="hover:text-white transition-colors">Cotação Seguro Online</Link></li>
               <li><Link to="/privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link></li>
             </ul>
           </div>

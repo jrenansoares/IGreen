@@ -10,14 +10,15 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navLinks = [
-    { name: "Seguros", path: "/" },
+    { name: "Início", path: "/" },
+    { name: "Seguros", path: "/seguros" },
     { name: "Energia", path: "/energia" },
     { name: "Telecom", path: "/telecom" },
   ];
 
   const handleCotacaoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     closeMenu();
-    if (location.pathname === "/") {
+    if (location.pathname === "/seguros") {
       e.preventDefault();
       document.getElementById("cotacao")?.scrollIntoView({ behavior: "smooth" });
     }
@@ -66,7 +67,7 @@ export function Header() {
             </Link>
           ))}
           <a 
-            href="/#cotacao"
+            href="/seguros#cotacao"
             onClick={handleCotacaoClick}
             className="bg-green-main hover:bg-green-dark text-white px-6 py-2.5 rounded-full transition-colors shadow-md hover:shadow-lg font-semibold min-h-[44px] flex items-center justify-center cursor-pointer"
           >
@@ -106,7 +107,7 @@ export function Header() {
             </Link>
           ))}
           <a 
-            href="/#cotacao"
+            href="/seguros#cotacao"
             onClick={handleCotacaoClick}
             className="w-full text-center bg-green-main text-white px-6 py-3.5 rounded-xl font-semibold shadow-md mt-2 block text-base"
           >

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { Home } from "./pages/Home";
 import { Seguros } from "./pages/Seguros";
 import { Energia } from "./pages/Energia";
 import { Telecom } from "./pages/Telecom";
@@ -40,7 +41,8 @@ export default function App() {
         
         <div className="flex-1">
           <Routes>
-            <Route path="/" element={<Seguros />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/seguros" element={<Seguros />} />
             <Route path="/energia" element={<Energia />} />
             <Route path="/telecom" element={<Telecom />} />
             <Route path="/privacidade" element={<Privacidade />} />
