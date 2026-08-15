@@ -71,7 +71,7 @@ export function Privacidade() {
             <section>
               <h2 className="text-xl font-bold text-gray-800 mb-3">7. Contato para Privacidade</h2>
               <p>
-                Se você tiver dúvidas sobre esta Política de Privacidade ou desejar exercer seus direitos sob a LGPD, entre em contato através dos canais de atendimento ou pelo e-mail: <strong>atendimento@bpseguradora.com.br</strong>.
+                Se você tiver dúvidas sobre esta Política de Privacidade ou desejar exercer seus direitos sob a LGPD, entre em contato através do nosso canal de atendimento: <strong>+55 21 98445-8464</strong>.
               </p>
             </section>
           </div>

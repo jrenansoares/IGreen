@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -41,29 +41,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Atendimento / Contato */}
+          {/* Column 3: Contato */}
           <div>
-            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Contato e Atendimento</h3>
+            <h3 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Contato</h3>
             <ul className="space-y-4 text-gray-300 text-sm font-medium">
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-bp-orange shrink-0" />
-                <span>Assistência 24h: 0800 042 1022</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="text-bp-orange shrink-0" />
-                <span>SAC: 0800 080 0158</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-bp-orange shrink-0" />
-                <a href="mailto:atendimento@bpseguradora.com.br" className="hover:text-white transition-colors">
-                  atendimento@bpseguradora.com.br
+                <a 
+                  href="https://wa.me/5521984458464" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  +55 21 98445-8464
                 </a>
               </li>
-              <li className="flex items-start gap-3 pt-2">
-                <MapPin size={18} className="text-bp-orange shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  Rua Rio de Janeiro, n° 1279 - Lourdes<br />Belo Horizonte/MG 30160-041
-                </span>
+              <li className="flex items-center gap-3">
+                <MapPin size={18} className="text-bp-orange shrink-0" />
+                <span>Brasil</span>
               </li>
             </ul>
           </div>
