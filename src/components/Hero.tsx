@@ -91,6 +91,7 @@ export function Hero() {
               playsInline
               preload="metadata"
               controlsList="nodownload"
+              aria-label="Vídeo institucional com Gusttavo Lima e BP Seguradora"
               poster="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop"
             >
               <source src="/bp-video.mp4" type="video/mp4" />

@@ -2,21 +2,125 @@
 <html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iGreen Seguros | Seguro Auto Completo</title>
-    <meta name="description" content="Proteja seu veículo com a iGreen Seguros e BP Seguradora. Cobertura contra roubo, furto, assistência 24h e mais. Sem análise de perfil. Faça sua cotação!" />
-    <meta property="og:title" content="iGreen Seguros | Seguro Auto Completo" />
-    <meta property="og:description" content="Proteja seu veículo com a iGreen Seguros e BP Seguradora. Cobertura contra roubo, furto, assistência 24h e mais. Sem análise de perfil. Faça sua cotação!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>iGreen Seguros | Seguro Auto com a Garantia BP Seguradora</title>
+    <meta name="description" content="Seguro auto completo sem análise de perfil ou condutor. Pagamento mensal via boleto, sem fidelidade e com assistência 24h. Garantido pela BP Seguradora (SUSEP 01546)." />
+    <meta name="author" content="J. Renan M. S. - Licenciado Autorizado iGreen Seguros" />
+    <meta name="theme-color" content="#55489D" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
-    
-    <!-- Using a clean, highly legible system font stack via Tailwind default, but we can also add Plus Jakarta Sans for a premium feel if desired. We will stick to system fonts per standard, but it will look clean. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="iGreen Seguros" />
+    <meta property="og:title" content="iGreen Seguros | Seguro Auto Completo" />
+    <meta property="og:description" content="Proteja seu veículo sem análise de perfil ou condutor. Pagamento mensal via boleto, sem fidelidade e assistência 24h em todo o Brasil." />
+    <meta property="og:image" content="/igreen-energy.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="iGreen Seguros | Seguro Auto Completo" />
+    <meta name="twitter:description" content="Proteja seu veículo sem análise de perfil ou condutor. Pagamento mensal via boleto e assistência 24h em todo o Brasil." />
+    <meta name="twitter:image" content="/igreen-energy.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/igreen-energy.png" />
+
+    <!-- Google Fonts Preconnect & Optimized Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (Schema.org) - Real Verifiable Information -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "InsuranceAgency",
+          "@id": "https://bpseguradora.com.br/#organization",
+          "name": "iGreen Seguros - BP Seguradora",
+          "description": "Intermediação de seguros de automóveis e proteção veicular operados pela BP Seguradora S.A. (SUSEP 01546).",
+          "url": "https://bpseguradora.com.br",
+          "logo": "https://bpseguradora.com.br/igreen-energy.png",
+          "telephone": "+55-800-080-0158",
+          "email": "atendimento@bpseguradora.com.br",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Rio de Janeiro, n° 1279",
+            "addressLocality": "Belo Horizonte",
+            "addressRegion": "MG",
+            "postalCode": "30160-041",
+            "addressCountry": "BR"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+55-800-042-1022",
+              "contactType": "emergency",
+              "name": "Assistência 24h",
+              "availableLanguage": "Portuguese"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+55-800-080-0158",
+              "contactType": "customer support",
+              "name": "SAC",
+              "availableLanguage": "Portuguese"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://bpseguradora.com.br/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "A iGreen Seguros faz análise de perfil ou consulta SPC/Serasa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não! Acreditamos que a proteção deve ser acessível. O valor do seguro é baseado apenas no modelo do veículo (Tabela FIPE), não importando sua idade, CEP ou restrições de crédito."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona a indenização de 100% da Tabela FIPE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Em caso de roubo ou furto do seu veículo, e caso ele não seja recuperado, a BP Seguradora garante o pagamento de 100% do valor do veículo com base na Tabela FIPE do mês do sinistro."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O seguro cobre batidas e acidentes (Colisão)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O foco do nosso seguro principal é a cobertura contra Roubo e Furto, que é o maior risco para os brasileiros, além da Assistência 24h completa (Guincho, pane, chaveiro). Consulte nossos especialistas sobre adicionais disponíveis para o seu perfil."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A iGreen Seguros é confiável?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim! Somos parceiros e garantidos pela BP Seguradora, uma instituição totalmente regulamentada pela SUSEP (Superintendência de Seguros Privados). O cantor Gusttavo Lima também confia e é nosso embaixador oficial."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona a Assistência 24 Horas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Você tem direito a guincho, socorro mecânico (pane seca e elétrica), chaveiro e troca de pneu. Tudo isso disponível em qualquer lugar do Brasil, bastando ligar para a central de atendimento 0800."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="antialiased" style="font-family: 'Plus Jakarta Sans', sans-serif;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -24,7 +24,7 @@ function PageTracker() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    trackPageView();
+    trackPageView(pathname);
   }, [pathname]);
 
   return null;

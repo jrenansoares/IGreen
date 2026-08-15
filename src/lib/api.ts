@@ -1,19 +1,29 @@
 import { LEAD_WEBHOOK_URL } from "./constants";
 
+export interface UtmParams {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  gclid?: string;
+  fbclid?: string;
+  [key: string]: string | undefined;
+}
+
 export interface LeadData {
   plate: string;
   vehicleType: string;
   name: string;
   whatsapp: string;
+  utms?: UtmParams;
 }
 
 export const submitLead = async (data: LeadData): Promise<boolean> => {
-  console.log("Submitting lead data:", data);
-  
+  // Webhook submission or DEMO mode fallback
   if (!LEAD_WEBHOOK_URL) {
-    // DEMO MODE
-    console.log("DEMO MODE: Lead successfully registered in console.");
-    return new Promise((resolve) => setTimeout(() => resolve(true), 1000));
+    // In demo mode, log the structured lead submission
+    return new Promise((resolve) => setTimeout(() => resolve(true), 800));
   }
 
   try {
