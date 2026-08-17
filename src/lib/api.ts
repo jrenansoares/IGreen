@@ -32,17 +32,37 @@ export const submitLead = async (data: LeadData): Promise<SubmitLeadResponse> =>
   const cleanPhone = data.whatsapp.replace(/\D/g, "");
   const waUrl = `https://wa.me/55${cleanPhone}?text=${encodeURIComponent(`Olá ${data.name}! Recebi sua cotação de seguro para a placa ${data.plate} (${data.vehicleType}). Vamos finalizar sua apólice?`)}`;
 
-  // Payload formatado e intuitivo para o Make.com (e-mail, Google Sheets, CRM)
+  // Payload formatado e compatível com qualquer convenção do Make.com (e-mail, Google Sheets, CRM, Webhook puro)
+  // Inclui chaves em português, inglês e nomes diretos para evitar qualquer campo vazio no cenário do Make.
   const makePayload = {
+    // 1. Chaves principais em Português
     evento: "nova_simulacao_seguro",
     placa: data.plate.toUpperCase(),
     tipo_veiculo: data.vehicleType,
     nome_cliente: data.name,
     whatsapp_cliente: data.whatsapp,
+    telefone_cliente: data.whatsapp,
     email_cliente: data.email || "Não informado",
     link_whatsapp_cliente: waUrl,
     whatsapp_consultor: WHATSAPP_NUMBER,
     data_hora: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
+
+    // 2. Chaves diretas / universais (padrão form-data / direct keys)
+    name: data.name,
+    nome: data.name,
+    plate: data.plate.toUpperCase(),
+    vehicleType: data.vehicleType,
+    tipo: data.vehicleType,
+    veiculo: data.vehicleType,
+    whatsapp: data.whatsapp,
+    telefone: data.whatsapp,
+    phone: data.whatsapp,
+    email: data.email || "",
+    whatsapp_link: waUrl,
+    link_whatsapp: waUrl,
+    created_at: new Date().toISOString(),
+
+    // 3. Rastreamento e UTMs
     utm_source: data.utms?.utm_source || "Site iGreen Seguros",
     utm_medium: data.utms?.utm_medium || "",
     utm_campaign: data.utms?.utm_campaign || "",
