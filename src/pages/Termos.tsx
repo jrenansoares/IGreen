@@ -1,8 +1,14 @@
 import { motion } from "motion/react";
+import { SEO } from "../components/SEO";
 
 export function Termos() {
   return (
     <main className="pt-32 pb-16 px-4 bg-gray-50 min-h-screen">
+      <SEO 
+        title="Termos de Uso | iGreen"
+        description="Termos de uso e condições gerais para navegação e utilização dos serviços de cotação e intermediação de soluções iGreen."
+        canonical="https://igreen.conexoes.workers.dev/termos"
+      />
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

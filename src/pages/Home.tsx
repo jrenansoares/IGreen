@@ -12,6 +12,7 @@ import {
   Award,
   ChevronRight
 } from "lucide-react";
+import { SEO } from "../components/SEO";
 import { WHATSAPP_NUMBER } from "../lib/constants";
 
 export function Home() {
@@ -89,6 +90,26 @@ export function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-24 pb-20">
+      <SEO 
+        title="iGreen | Soluções em Energia Solar por Assinatura, Seguro Auto e Telecom 5G"
+        description="Conheça as soluções da iGreen: Economize até 18% na conta de luz sem obras, contrate Seguro Auto mensal sem fidelidade operado pela BP Seguradora e tenha planos de telefonia 5G com internet cumulativa."
+        canonical="https://igreen.conexoes.workers.dev/"
+        ogImage="/iGreen%20Verde%20Claro.png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "iGreen",
+          "url": "https://igreen.conexoes.workers.dev",
+          "logo": "https://igreen.conexoes.workers.dev/iGreen%20Verde%20Claro.png",
+          "description": "Ecossistema de soluções em energia solar por assinatura, seguros automotivos e telefonia móvel 5G.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-21-98445-8464",
+            "contactType": "customer service",
+            "availableLanguage": "Portuguese"
+          }
+        }}
+      />
       
       {/* Hero Section */}
       <section className="relative px-4 pt-8 pb-16 lg:pt-12 lg:pb-24 overflow-hidden">

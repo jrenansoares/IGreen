@@ -1,8 +1,14 @@
 import { motion } from "motion/react";
+import { SEO } from "../components/SEO";
 
 export function Privacidade() {
   return (
     <main className="pt-32 pb-16 px-4 bg-gray-50 min-h-screen">
+      <SEO 
+        title="Política de Privacidade e LGPD | iGreen"
+        description="Conheça como a iGreen e seus licenciados tratam, utilizam e protegem seus dados pessoais em total conformidade com a Lei Geral de Proteção de Dados (LGPD)."
+        canonical="https://igreen.conexoes.workers.dev/privacidade"
+      />
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

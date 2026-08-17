@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { 
   Wifi, 
   Check, 
@@ -11,12 +11,11 @@ import {
   ShoppingBag, 
   ChevronDown,
   MessageCircle,
-  Award,
-  PhoneCall,
-  Play
+  Award
 } from "lucide-react";
 import { trackWhatsAppClick, buildWhatsAppMessageWithUtm } from "../lib/tracking";
 import { WHATSAPP_NUMBER } from "../lib/constants";
+import { SEO } from "../components/SEO";
 
 export function Telecom() {
   const [withPortability, setWithPortability] = useState<boolean>(true);
@@ -173,6 +172,32 @@ export function Telecom() {
 
   return (
     <main className="pt-20 bg-white text-gray-900 overflow-hidden">
+      <SEO 
+        title="Planos de Celular 5G com Internet que Acumula | iGreen Telecom"
+        description="Conheça a iGreen Telecom: Planos 5G sem fidelidade, WhatsApp livre, gigas que acumulam para o próximo mês e +5GB de bônus na portabilidade. Ative via eSIM ou Chip."
+        canonical="https://igreen.conexoes.workers.dev/telecom"
+        ogImage="/iGreen%20Telecom%20-%20%20Logo%20Verde.png"
+        ogTitle="Planos de Celular 5G com Internet que Acumula | iGreen Telecom"
+        ogDescription="Conheça a iGreen Telecom: Planos 5G sem fidelidade, WhatsApp livre, gigas que acumulam para o próximo mês e +5GB de bônus na portabilidade. Ative via eSIM ou Chip."
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Planos de Celular iGreen Telecom 5G",
+          "description": "Planos de telefonia móvel 5G com internet que acumula, WhatsApp liberado sem gastar franquia e sem fidelidade contratual.",
+          "brand": {
+            "@type": "Brand",
+            "name": "iGreen Telecom"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "BRL",
+            "lowPrice": "54.90",
+            "highPrice": "104.90",
+            "offerCount": "5"
+          }
+        }}
+      />
+
       {/* 1. HERO COM VÍDEO OFICIAL E ALTA CONVERSÃO */}
       <section className="relative bg-gradient-to-b from-gray-950 via-[#0B1A12] to-gray-900 text-white py-12 md:py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#00A651_1px,transparent_1px)] [background-size:24px_24px]"></div>
@@ -206,9 +231,9 @@ export function Telecom() {
                 transition={{ delay: 0.1 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black mb-5 tracking-tight leading-[1.15]"
               >
-                Chega de perder internet no fim do mês. Conecte-se ao <br className="hidden sm:inline" />
+                Planos de Celular 5G com <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-main via-emerald-400 to-green-light">
-                  5G da iGreen Telecom
+                  Internet que Acumula
                 </span>
               </motion.h1>
 
@@ -564,7 +589,7 @@ export function Telecom() {
               <div className="w-10 h-10 rounded-xl bg-green-main text-white font-bold flex items-center justify-center mb-4">
                 1
               </div>
-              <h4 className="text-base font-bold text-gray-900 mb-1">Escolha seu Plano</h4>
+              <h3 className="text-base font-bold text-gray-900 mb-1">Escolha seu Plano</h3>
               <p className="text-xs text-gray-600">Selecione a franquia desejada e nos chame no WhatsApp.</p>
             </div>
 
@@ -572,7 +597,7 @@ export function Telecom() {
               <div className="w-10 h-10 rounded-xl bg-green-main text-white font-bold flex items-center justify-center mb-4">
                 2
               </div>
-              <h4 className="text-base font-bold text-gray-900 mb-1">Ative via eSIM ou Chip</h4>
+              <h3 className="text-base font-bold text-gray-900 mb-1">Ative via eSIM ou Chip</h3>
               <p className="text-xs text-gray-600">Receba o QR Code digital no mesmo dia ou receba o chip em casa.</p>
             </div>
 
@@ -580,7 +605,7 @@ export function Telecom() {
               <div className="w-10 h-10 rounded-xl bg-green-main text-white font-bold flex items-center justify-center mb-4">
                 3
               </div>
-              <h4 className="text-base font-bold text-gray-900 mb-1">Ganhe +5GB Todo Mês</h4>
+              <h3 className="text-base font-bold text-gray-900 mb-1">Ganhe +5GB Todo Mês</h3>
               <p className="text-xs text-gray-600">Portabilidade concluída sem ficar sem sinal e com bônus vitalício.</p>
             </div>
           </div>
@@ -592,23 +617,28 @@ export function Telecom() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight mb-2">
-              Dúvidas Frequentes
+              Dúvidas Frequentes sobre a iGreen Telecom
             </h2>
             <p className="text-gray-500 text-sm">
-              Tudo o que você precisa saber de forma clara e rápida.
+              Tudo o que você precisa saber de forma clara e rápida sobre nossos planos móveis.
             </p>
           </div>
 
           <div className="space-y-3">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
+              const questionId = `telecom-faq-btn-${idx}`;
+              const panelId = `telecom-faq-panel-${idx}`;
               return (
                 <div 
                   key={idx}
                   className="rounded-2xl border border-gray-200 overflow-hidden bg-white"
                 >
                   <button
+                    id={questionId}
                     type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full p-4 sm:p-5 text-left font-bold text-gray-900 text-sm sm:text-base flex items-center justify-between gap-4 hover:bg-gray-50 cursor-pointer"
                   >
@@ -619,7 +649,12 @@ export function Telecom() {
                     />
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                    <div 
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={questionId}
+                      className="px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3"
+                    >
                       {faq.a}
                     </div>
                   )}

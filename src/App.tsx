@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 import { Home } from "./pages/Home";
-import { Seguros } from "./pages/Seguros";
-import { Energia } from "./pages/Energia";
-import { Telecom } from "./pages/Telecom";
-import { Privacidade } from "./pages/Privacidade";
-import { Termos } from "./pages/Termos";
 import { trackPageView } from "./lib/tracking";
+
+// Lazy loading das rotas secundárias para otimização de performance e code splitting
+const Seguros = lazy(() => import("./pages/Seguros").then(m => ({ default: m.Seguros })));
+const Energia = lazy(() => import("./pages/Energia").then(m => ({ default: m.Energia })));
+const Telecom = lazy(() => import("./pages/Telecom").then(m => ({ default: m.Telecom })));
+const Privacidade = lazy(() => import("./pages/Privacidade").then(m => ({ default: m.Privacidade })));
+const Termos = lazy(() => import("./pages/Termos").then(m => ({ default: m.Termos })));
+const NotFound = lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,6 +34,14 @@ function PageTracker() {
   return null;
 }
 
+function PageLoader() {
+  return (
+    <div className="min-h-[50vh] flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-3 border-green-main/30 border-t-green-main animate-spin" />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -40,14 +51,17 @@ export default function App() {
         <Header />
         
         <div className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/seguros" element={<Seguros />} />
-            <Route path="/energia" element={<Energia />} />
-            <Route path="/telecom" element={<Telecom />} />
-            <Route path="/privacidade" element={<Privacidade />} />
-            <Route path="/termos" element={<Termos />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/seguros" element={<Seguros />} />
+              <Route path="/energia" element={<Energia />} />
+              <Route path="/telecom" element={<Telecom />} />
+              <Route path="/privacidade" element={<Privacidade />} />
+              <Route path="/termos" element={<Termos />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </div>
 
         <Footer />
@@ -56,4 +70,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
 

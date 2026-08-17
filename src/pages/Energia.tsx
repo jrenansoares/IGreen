@@ -1,5 +1,5 @@
 import { useState, useId } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "motion/react";
 import { 
   Zap, 
   Leaf, 
@@ -7,21 +7,17 @@ import {
   ShieldCheck, 
   Sparkles, 
   Check, 
-  X, 
-  ArrowRight, 
   MessageCircle, 
   Sun, 
   ChevronDown, 
   Building2, 
   Home, 
   TreePine, 
-  FileText,
-  Clock,
-  TrendingDown,
-  Award
+  TrendingDown
 } from "lucide-react";
 import { trackWhatsAppClick, buildWhatsAppMessageWithUtm } from "../lib/tracking";
 import { WHATSAPP_NUMBER } from "../lib/constants";
+import { SEO } from "../components/SEO";
 
 export function Energia() {
   const [billValue, setBillValue] = useState<number>(500);
@@ -29,7 +25,7 @@ export function Energia() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const sliderId = useId();
 
-  // Cálculos dinâmicos de economia (média de 15% a 20%)
+  // Cálculos dinâmicos de economia (15% residencial e 18% comercial)
   const discountRate = propertyType === "comercial" ? 0.18 : 0.15;
   const monthlySavings = billValue * discountRate;
   const annualSavings = monthlySavings * 12;
@@ -85,6 +81,31 @@ export function Energia() {
 
   return (
     <main className="pt-20 bg-white text-gray-900 overflow-hidden">
+      <SEO 
+        title="Desconto na Conta de Luz sem Placas | iGreen Energy"
+        description="Economize até 18% na conta de luz com energia solar por assinatura da iGreen. Sem instalar placas, sem investimento inicial e sem fidelidade. Consulte sua disponibilidade."
+        canonical="https://igreen.conexoes.workers.dev/energia"
+        ogImage="/iGreen%20-%20Conex%C3%A3o%20Green.png"
+        ogTitle="Desconto na Conta de Luz sem Placas | iGreen Energy"
+        ogDescription="Economize até 18% na conta de luz com energia solar por assinatura da iGreen. Sem instalar placas, sem investimento inicial e sem fidelidade. Consulte sua disponibilidade."
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "iGreen Energy - Energia Solar por Assinatura",
+          "serviceType": "Energia Solar Compartilhada por Assinatura",
+          "provider": {
+            "@type": "Organization",
+            "name": "iGreen",
+            "url": "https://igreen.conexoes.workers.dev"
+          },
+          "description": "Serviço de energia solar compartilhada por assinatura com desconto na conta de luz sem necessidade de instalação de placas no imóvel.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Brasil"
+          }
+        }}
+      />
+
       {/* 1. HERO SECTION DE ALTA CONVERSÃO */}
       <section className="relative bg-gradient-to-b from-[#062413] via-[#0A381E] to-[#062413] text-white py-14 md:py-22 px-4 overflow-hidden">
         <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#00A651_1px,transparent_1px)] [background-size:24px_24px]"></div>
@@ -115,7 +136,7 @@ export function Energia() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.15]"
           >
-            Economize até 20% na sua conta de luz <br className="hidden sm:inline" />
+            Economize até 18% na sua conta de luz <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-solar via-green-light to-green-main">
               sem gastar 1 centavo com placas
             </span>
@@ -128,7 +149,7 @@ export function Energia() {
             transition={{ delay: 0.15 }}
             className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto font-normal leading-relaxed"
           >
-            A iGreen conecta seu imóvel a fazendas solares parceiras. A energia limpa é injetada na sua distribuidora e vira <strong className="text-white">desconto automático mensal</strong>. Sem obras, sem investimento e sem fidelidade.
+            A iGreen conecta seu imóvel a fazendas solares de energia solar compartilhada. A energia renovável é injetada na sua distribuidora e vira <strong className="text-white">desconto automático mensal na conta de luz</strong>. Sem obras, sem investimento inicial e sem fidelidade.
           </motion.p>
 
           {/* Botões Hero */}
@@ -179,7 +200,7 @@ export function Energia() {
               <TrendingDown size={24} className="text-yellow-solar shrink-0" />
               <div>
                 <p className="text-xs text-gray-400 font-medium">Desconto Real</p>
-                <p className="text-sm font-bold text-white">Até 20% Todo Mês</p>
+                <p className="text-sm font-bold text-white">Até 18% Todo Mês</p>
               </div>
             </div>
             <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
@@ -205,7 +226,7 @@ export function Energia() {
               Quanto você vai economizar por ano?
             </h2>
             <p className="text-gray-600 text-base">
-              Ajuste o valor médio da sua conta atual e veja o impacto financeiro imediato da energia solar por assinatura.
+              Ajuste o valor médio da sua conta de energia atual e veja a economia gerada pela energia solar compartilhada por assinatura para residência ou empresas.
             </p>
           </div>
 
@@ -331,7 +352,7 @@ export function Energia() {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-green-main/10 border border-green-main/20 text-xs">
                   <TreePine size={22} className="text-green-main shrink-0" />
                   <span className="text-gray-200">
-                    Equivale ao plantio de <strong className="text-white">{treesEquivalent} árvores</strong> e redução direta da pegada de carbono.
+                    Equivale ao plantio de <strong className="text-white">{treesEquivalent} árvores</strong> e redução direta da pegada de carbono com energia limpa e renovável.
                   </span>
                 </div>
 
@@ -370,7 +391,7 @@ export function Energia() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Envie sua Conta de Luz</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Você nos envia uma foto recente da sua conta pelo WhatsApp para calcularmos sua cota exata de créditos.
+                Você nos envia uma foto recente da sua conta de energia pelo WhatsApp para calcularmos sua cota exata de créditos e desconto.
               </p>
             </div>
 
@@ -380,7 +401,7 @@ export function Energia() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Conexão à Usina Solar</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                A iGreen conecta sua instalação à usina solar parceira e os créditos de energia são injetados na rede da sua concessionária.
+                A iGreen conecta sua instalação à fazenda solar compartilhada parceira e os créditos de energia são injetados na rede da sua concessionária.
               </p>
             </div>
 
@@ -390,7 +411,7 @@ export function Energia() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Desconto Todo Mês</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Os créditos abatem o valor do kWh consumido e você paga até 20% menos todos os meses sem nenhuma dor de cabeça.
+                Os créditos abatem o valor do kWh consumido e você economiza até 18% todos os meses na sua conta de energia sem nenhuma obra.
               </p>
             </div>
           </div>
@@ -408,7 +429,7 @@ export function Energia() {
               Por que a Assinatura Solar é Mais Inteligente?
             </h2>
             <p className="text-gray-600 text-base">
-              Veja a diferença entre ter placas no telhado, continuar pagando a tarifa cheia ou assinar a iGreen Energy.
+              Veja a diferença entre ter placas no telhado, continuar pagando a tarifa cheia ou economizar na conta de energia com a iGreen Energy.
             </p>
           </div>
 
@@ -480,7 +501,7 @@ export function Energia() {
               Tire Suas Dúvidas
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight mb-2">
-              Perguntas Frequentes
+              Perguntas Frequentes sobre Energia por Assinatura
             </h2>
             <p className="text-gray-500 text-sm">
               Tudo o que você precisa saber sobre a energia solar por assinatura da iGreen.
@@ -490,13 +511,18 @@ export function Energia() {
           <div className="space-y-3">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
+              const questionId = `energy-faq-btn-${idx}`;
+              const panelId = `energy-faq-panel-${idx}`;
               return (
                 <div 
                   key={idx}
                   className="rounded-2xl border border-gray-200 overflow-hidden bg-white"
                 >
                   <button
+                    id={questionId}
                     type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full p-4 sm:p-5 text-left font-bold text-gray-900 text-sm sm:text-base flex items-center justify-between gap-4 hover:bg-gray-50 cursor-pointer"
                   >
@@ -507,7 +533,12 @@ export function Energia() {
                     />
                   </button>
                   {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                    <div 
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={questionId}
+                      className="px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3"
+                    >
                       {faq.a}
                     </div>
                   )}
@@ -525,10 +556,10 @@ export function Energia() {
             <Sun size={28} className="text-yellow-solar" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight">
-            Pronto para pagar menos na conta de luz?
+            Pronto para economizar na conta de luz?
           </h2>
           <p className="text-gray-200 text-base max-w-xl mx-auto">
-            Envie uma foto da sua conta de luz agora mesmo. Faremos a simulação exata da sua economia sem nenhum compromisso.
+            Envie uma foto da sua conta de luz agora mesmo pelo WhatsApp. Faremos a simulação exata da sua economia de energia sem nenhum compromisso.
           </p>
           <div className="pt-2">
             <button
