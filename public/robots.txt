@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bpseguradora.com.br/sitemap.xml
+Sitemap: https://igreen.conexoes.workers.dev/sitemap.xml
