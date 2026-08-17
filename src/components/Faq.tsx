@@ -1,28 +1,44 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ShieldCheck, Zap, Car } from "lucide-react";
+import { ChevronDown, ShieldCheck, Zap, Car, HelpCircle, CheckCircle2 } from "lucide-react";
 
 export function Faq() {
   const faqs = [
     {
+      q: "O iGreen Seguros é seguro de verdade ou proteção veicular?",
+      a: "É Seguro Auto de verdade! Nossas apólices são emitidas e 100% garantidas pela BP Seguradora S.A., uma instituição seguradora autorizada e fiscalizada pela SUSEP (Superintendência de Seguros Privados) sob o código 01546. Não somos associação nem cooperativa de proteção veicular."
+    },
+    {
+      q: "O seguro possui contrato de fidelidade ou multa rescisória?",
+      a: "Não! O iGreen Seguros não possui fidelidade. Você paga a sua mensalidade mês a mês e pode cancelar quando quiser, sem cobrança de multas rescisórias ou burocracias."
+    },
+    {
+      q: "Como funciona a forma de pagamento mensal?",
+      a: "O pagamento é recorrente mensal via boleto bancário ou Pix, sem comprometer o limite total do seu cartão de crédito anual. A primeira parcela de ativação pode ser paga via Pix ou cartão."
+    },
+    {
       q: "A iGreen Seguros faz análise de perfil ou consulta SPC/Serasa?",
-      a: "Não! Acreditamos que o seguro auto deve ser acessível e sem burocracia. O valor do seguro é baseado exclusivamente no modelo do veículo (Tabela FIPE), sem análise de condutor, CEP de pernoite ou restrições cadastrais."
+      a: "Não! O valor do seguro é calculado exclusivamente com base no valor da Tabela FIPE do veículo. Não fazemos distinção por idade do condutor, CEP de pernoite ou consulta a órgãos de restrição cadastral."
     },
     {
-      q: "Como funciona a indenização de 100% da Tabela FIPE?",
-      a: "Em caso de roubo ou furto do seu veículo, e caso ele não seja recuperado, a BP Seguradora garante o pagamento de 100% do valor do veículo com base na Tabela FIPE oficial do mês do sinistro."
+      q: "Qualquer motorista habilitado pode dirigir o veículo?",
+      a: "Sim! A apólice protege o veículo. Desde que o condutor possua Carteira Nacional de Habilitação (CNH) válida e regularizada, o veículo estará plenamente coberto em qualquer situação de sinistro."
     },
     {
-      q: "O seguro cobre batidas e acidentes (Colisão)?",
-      a: "O foco do nosso seguro principal é a cobertura contra Roubo e Furto, que é o maior risco para os brasileiros, além da Assistência 24h completa (Guincho, socorro mecânico, chaveiro). Consulte nossos especialistas sobre coberturas adicionais disponíveis para o seu veículo."
+      q: "Como funciona a indenização de até 100% da Tabela FIPE?",
+      a: "Em caso de roubo ou furto do veículo em que o mesmo não seja recuperado, ou em caso de perda total (PT), a BP Seguradora efetua o pagamento da indenização integral conforme a Tabela FIPE oficial do mês da ocorrência."
     },
     {
-      q: "A iGreen Seguros é confiável?",
-      a: "Sim! Trabalhamos com apólices oficiais emitidas e garantidas pela BP Seguradora, uma seguradora totalmente registrada e fiscalizada pela SUSEP (Superintendência de Seguros Privados). O cantor Gusttavo Lima também confia e é nosso embaixador oficial."
+      q: "O seguro cobre colisão (batidas) e danos a terceiros?",
+      a: "Sim! Além da proteção contra roubo, furto e fenômenos da natureza, oferecemos coberturas completas para colisão (acidentes), perda total e Danos Materiais/Corporais a Terceiros (RCF-V), além de assistência 24h completa."
     },
     {
-      q: "Como funciona a Assistência 24 Horas?",
-      a: "Você tem direito a guincho, socorro mecânico (pane seca e elétrica), chaveiro e troca de pneu com abrangência em todo o território nacional."
+      q: "Como funciona a Assistência 24 Horas em todo o Brasil?",
+      a: "Você conta com guincho com ampla quilometragem, socorro mecânico emergencial (pane elétrica ou mecânica), chaveiro, troca de pneus e assistência a passageiros com atendimento em todo o território nacional."
+    },
+    {
+      q: "Como faço minha cotação e em quanto tempo recebo a proposta?",
+      a: "Basta preencher a placa e o tipo do seu veículo no simulador acima. Em menos de 1 minuto nossos consultores enviam os valores e opções de coberturas diretamente no seu WhatsApp para você ativar sem sair de casa."
     }
   ];
 
@@ -32,88 +48,82 @@ export function Faq() {
     <section id="duvidas" className="py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         
-        {/* Trust Section Embedded */}
-        <div className="mb-16 md:mb-20 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-light border border-gray-200 mb-5">
-            <ShieldCheck className="text-green-main" size={20} />
-            <span className="font-semibold text-text-dark text-sm sm:text-base">Seguro Registrado na SUSEP</span>
+        {/* Trust Badges */}
+        <div className="mb-14 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 mb-4">
+            <HelpCircle className="text-green-main" size={18} />
+            <span className="font-extrabold text-gray-900 text-xs sm:text-sm">Tire Suas Dúvidas</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-bold text-text-dark mb-8 max-w-2xl mx-auto leading-tight">
-            Todas as respostas que você precisa para rodar tranquilo e segurado.
-          </h2>
           
-          <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-80">
-            <div className="flex flex-col items-center gap-2">
-              <Car size={32} className="text-green-dark" />
-              <span className="text-sm font-bold text-center">Carros, Motos e Caminhões</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Zap size={32} className="text-bp-orange" />
-              <span className="text-sm font-bold">Rápido e sem burocracia</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <ShieldCheck size={32} className="text-bp-purple" />
-              <span className="text-sm font-bold">Seguradora SUSEP 01546</span>
-            </div>
-          </div>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4 max-w-3xl mx-auto">
+            Perguntas Frequentes sobre o Seguro Auto
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Transparência total para você tomar a melhor decisão para proteger seu patrimônio.
+          </p>
         </div>
 
-        {/* FAQ */}
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-extrabold text-green-dark mb-8 text-center tracking-tight">
-            Perguntas Frequentes
-          </h3>
-          
-          <div className="space-y-3.5">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              const headingId = `faq-heading-${index}`;
-              const panelId = `faq-panel-${index}`;
-              return (
-                <div 
-                  key={index} 
-                  className={`border rounded-2xl overflow-hidden transition-colors ${
-                    isOpen ? 'border-green-main bg-green-main/5 shadow-xs' : 'border-gray-200 bg-white hover:border-gray-300'
-                  }`}
+        {/* FAQ Accordion List */}
+        <div className="max-w-3xl mx-auto space-y-3.5">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            const headingId = `faq-heading-${index}`;
+            const panelId = `faq-panel-${index}`;
+            return (
+              <div 
+                key={index} 
+                className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
+                  isOpen 
+                    ? 'border-green-main bg-green-50/40 shadow-xs' 
+                    : 'border-gray-200/80 bg-white hover:border-gray-300'
+                }`}
+              >
+                <button 
+                  id={headingId}
+                  type="button"
+                  className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex justify-between items-center cursor-pointer min-h-[56px] gap-4"
+                  onClick={() => setIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                 >
-                  <button 
-                    id={headingId}
-                    type="button"
-                    className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex justify-between items-center cursor-pointer min-h-[56px]"
-                    onClick={() => setIndex(isOpen ? null : index)}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                  >
-                    <span className="font-bold text-text-dark pr-4 text-base sm:text-lg">{faq.q}</span>
+                  <span className="font-extrabold text-gray-900 text-base sm:text-lg leading-snug">
+                    {faq.q}
+                  </span>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    isOpen ? 'bg-green-main text-white' : 'bg-gray-100 text-gray-500'
+                  }`}>
                     <ChevronDown 
-                      className={`shrink-0 text-gray-400 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 text-green-main' : ''
+                      size={18}
+                      className={`transition-transform duration-200 ${
+                        isOpen ? 'rotate-180' : ''
                       }`} 
                     />
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div 
-                        id={panelId}
-                        role="region"
-                        aria-labelledby={headingId}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-5 sm:px-6 pb-5 pt-1 text-text-dark/80 text-sm sm:text-base leading-relaxed">
-                          {faq.a}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
+                  </div>
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div 
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={headingId}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 sm:px-6 pb-5 pt-1 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-green-100/60 mt-1">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
+
       </div>
     </section>
   );

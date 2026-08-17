@@ -28,9 +28,9 @@ export function Home() {
       subtitle: "A escolha do Embaixador Gusttavo Lima",
       description: "Proteção completa contra roubo, furto, colisão e assistência 24h em todo o Brasil. Sem análise de perfil ou condutor e até 3x mais econômico.",
       highlights: [
-        "Sem análise de perfil ou condutor",
-        "Qualquer motorista habilitado pode dirigir",
+        "Sem fidelidade: cancele quando quiser",
         "Pagamento mensal via boleto ou Pix",
+        "Sem análise de condutor ou CEP",
         "Assistência 24h completa em todo o Brasil"
       ],
       ctaText: "Acessar iGreen Seguros",
