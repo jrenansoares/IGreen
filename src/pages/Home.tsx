@@ -23,6 +23,8 @@ export function Home() {
       badge: "Garantia BP Seguradora • SUSEP",
       badgeColor: "bg-bp-purple/10 text-bp-purple border-bp-purple/20",
       title: "iGreen Seguros",
+      logo: "/iGreen seguros verde.png",
+      logoAlt: "Logo iGreen Seguros",
       subtitle: "A escolha do Embaixador Gusttavo Lima",
       description: "Proteção completa contra roubo, furto, colisão e assistência 24h em todo o Brasil. Sem análise de perfil ou condutor e até 3x mais econômico.",
       highlights: [
@@ -44,6 +46,8 @@ export function Home() {
       badge: "Desconto Direto na Conta",
       badgeColor: "bg-green-main/10 text-green-dark border-green-main/20",
       title: "iGreen Energy",
+      logo: "/iGreen - Conexão Green.png",
+      logoAlt: "Logo iGreen Energy",
       subtitle: "Economize na luz sem gastar com placas",
       description: "Reduza o valor da sua fatura mensal consumindo energia limpa de fazendas solares parceiras, sem obras, sem taxa de adesão e sem fidelidade.",
       highlights: [
@@ -65,6 +69,8 @@ export function Home() {
       badge: "Planos a partir de R$ 49,90/mês",
       badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
       title: "iGreen Telecom",
+      logo: "/iGreen Telecom -  Logo Verde.png",
+      logoAlt: "Logo iGreen Telecom",
       subtitle: "Conexão de alta velocidade sem limites",
       description: "Planos móveis modernos com ultravelocidade 5G, WhatsApp ilimitado, internet cumulativa que não expira e a maior cobertura do Brasil.",
       highlights: [
@@ -147,18 +153,20 @@ export function Home() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 mb-2">
-                    <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shrink-0">
-                      {service.icon}
+                  <div className="flex flex-col gap-3 mb-2">
+                    <div className="w-full max-w-[210px] h-14 bg-white rounded-2xl px-4 py-2 flex items-center justify-center shadow-md border border-white/40">
+                      <img 
+                        src={service.logo} 
+                        alt={service.logoAlt} 
+                        className="max-h-8 max-w-full w-auto h-auto object-contain"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
                     </div>
-                    <div>
-                      <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                        {service.title}
-                      </h2>
-                      <p className="text-sm text-white/80 font-medium">
-                        {service.subtitle}
-                      </p>
-                    </div>
+                    <p className="text-sm text-white/90 font-medium">
+                      {service.subtitle}
+                    </p>
                   </div>
                 </div>
 

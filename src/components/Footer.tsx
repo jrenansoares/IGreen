@@ -11,22 +11,42 @@ export function Footer() {
           
           {/* Column 1: Brand */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 bg-white rounded-xl py-3 px-4 w-max">
-              <img 
-                src="/igreen-energy.png" 
-                alt="iGreen Seguros" 
-                className="h-7 object-contain" 
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                }} 
-              />
-              <div className="hidden text-xl font-black text-gray-800 tracking-tight">
-                iGREEN<span className="text-green-main">SEGUROS</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-md">
+              <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
+                <img 
+                  src="/iGreen seguros verde.png" 
+                  alt="iGreen Seguros" 
+                  className="max-h-6 max-w-full w-auto object-contain" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                />
+              </div>
+              <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
+                <img 
+                  src="/iGreen - Conexão Green.png" 
+                  alt="iGreen Energy" 
+                  className="max-h-6 max-w-full w-auto object-contain" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                />
+              </div>
+              <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
+                <img 
+                  src="/iGreen Telecom -  Logo Verde.png" 
+                  alt="iGreen Telecom" 
+                  className="max-h-6 max-w-full w-auto object-contain" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                />
+              </div>
+              <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
+                <img 
+                  src="/BP - SEGURADORA.png" 
+                  alt="BP Seguradora" 
+                  className="max-h-6 max-w-full w-auto object-contain" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                />
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Seguro auto definitivo contra roubo, furto, colisão e assistência 24h sem burocracia, garantido por seguradora SUSEP. Até 3x mais barato que seguros tradicionais.
+              Ecossistema iGreen: Soluções completas em Seguro Auto garantido por seguradora SUSEP, Energia Solar por assinatura com economia direta na fatura e Telefonia Móvel 5G.
             </p>
           </div>
 

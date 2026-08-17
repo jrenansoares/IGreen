@@ -9,6 +9,22 @@ export function Header() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const getCurrentLogo = () => {
+    switch (location.pathname) {
+      case "/telecom":
+        return { src: "/iGreen Telecom -  Logo Verde.png", alt: "iGreen Telecom", label: "Telecom", isSymbolOnly: false };
+      case "/energia":
+        return { src: "/iGreen - Conexão Green.png", alt: "iGreen Energy", label: "Energy", isSymbolOnly: false };
+      case "/seguros":
+        return { src: "/iGreen seguros verde.png", alt: "iGreen Seguros", label: "Seguros", isSymbolOnly: false };
+      default:
+        // Na Home ("/"), exibir apenas o símbolo da iGreen
+        return { src: "/Cópia de G - Verde.png", alt: "iGreen", label: "", isSymbolOnly: true };
+    }
+  };
+
+  const currentLogo = getCurrentLogo();
+
   const navLinks = [
     { name: "Início", path: "/" },
     { name: "Seguros", path: "/seguros" },
@@ -29,28 +45,54 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
         <Link 
           to="/" 
-          className="flex items-center gap-2" 
+          className="flex items-center gap-3" 
           onClick={closeMenu}
-          aria-label="iGreen Seguros - Página Inicial"
+          aria-label={`${currentLogo.alt} - Página Inicial`}
         >
-          {/* Logo iGreen Seguros */}
-          <img 
-            src="/igreen-energy.png" 
-            alt="iGreen Seguros" 
-            className="h-8 object-contain" 
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling?.classList.remove('hidden');
-            }} 
-          />
-          <div className="hidden flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-green-main flex items-center justify-center">
-              <div className="w-4 h-4 rounded-full bg-white"></div>
+          {currentLogo.isSymbolOnly ? (
+            /* Apenas o símbolo iGreen na Home */
+            <div className="flex items-center gap-2.5">
+              <img 
+                src={currentLogo.src} 
+                alt="iGreen" 
+                className="h-10 w-10 object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden w-10 h-10 rounded-2xl bg-gradient-to-br from-green-main to-green-dark flex items-center justify-center shadow-md shadow-green-main/20">
+                <div className="w-4 h-4 rounded-full border-2 border-white flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-solar"></div>
+                </div>
+              </div>
+              <span className="text-xl font-black text-green-dark tracking-tight hidden sm:inline">
+                iGreen
+              </span>
             </div>
-            <span className="text-2xl font-bold text-green-dark tracking-tight">
-              iGreen <span className="font-light text-green-main">Seguros</span>
-            </span>
-          </div>
+          ) : (
+            /* Logo Completa nas páginas internas */
+            <div className="h-10 flex items-center">
+              <img 
+                key={currentLogo.src}
+                src={currentLogo.src} 
+                alt={currentLogo.alt} 
+                className="max-h-9 max-w-[175px] w-auto object-contain" 
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }} 
+              />
+              <div className="hidden flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-green-main flex items-center justify-center">
+                  <div className="w-4 h-4 rounded-full bg-white"></div>
+                </div>
+                <span className="text-2xl font-bold text-green-dark tracking-tight">
+                  iGreen <span className="font-light text-green-main">{currentLogo.label}</span>
+                </span>
+              </div>
+            </div>
+          )}
         </Link>
 
         {/* Desktop Nav */}

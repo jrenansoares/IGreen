@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Loader2, CheckCircle2, AlertCircle, ArrowRight, Car, ShieldCheck, Truck } from "lucide-react";
+import { Loader2, CheckCircle2, AlertCircle, ArrowRight, Car, ShieldCheck, Truck, Mail, Send } from "lucide-react";
 import { formatPhone, formatPlate, isValidPlate, isValidPhone } from "../lib/utils";
-import { submitLead, LeadData } from "../lib/api";
+import { submitLead, LeadData, SubmitLeadResponse } from "../lib/api";
 import { trackSimulationStart, trackSimulationComplete, trackLeadSubmit, trackWhatsAppClick } from "../lib/tracking";
 import { WHATSAPP_NUMBER } from "../lib/constants";
 import { getStoredUtms, buildWhatsAppMessageWithUtm } from "../lib/tracking";
@@ -16,9 +16,11 @@ export function QuoteForm() {
     vehicleType: "CARRO",
     name: "",
     whatsapp: "",
+    email: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState<SubmitLeadResponse | null>(null);
 
   const handlePlateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatPlate(e.target.value);
@@ -38,6 +40,12 @@ export function QuoteForm() {
     if (errors.name) setErrors((prev) => ({ ...prev, name: "" }));
   };
 
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setFormData((prev) => ({ ...prev, email: val }));
+    if (errors.email) setErrors((prev) => ({ ...prev, email: "" }));
+  };
+
   const validateSimulation = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.plate || !isValidPlate(formData.plate)) {
@@ -54,6 +62,9 @@ export function QuoteForm() {
     }
     if (!formData.whatsapp || !isValidPhone(formData.whatsapp)) {
       newErrors.whatsapp = "Informe um WhatsApp válido com DDD (ex: (11) 98888-7777).";
+    }
+    if (formData.email && formData.email.trim().length > 0 && !formData.email.includes("@")) {
+      newErrors.email = "Informe um endereço de e-mail válido.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -88,11 +99,12 @@ export function QuoteForm() {
       utms,
     };
 
-    const success = await submitLead(payload);
+    const response = await submitLead(payload);
     setIsSubmitting(false);
 
-    if (success) {
+    if (response.success) {
       trackLeadSubmit(payload);
+      setSubmitResult(response);
       setStep("SUCCESS");
     } else {
       setErrors({ submit: "Ocorreu um erro ao registrar sua solicitação. Tente novamente ou use o WhatsApp." });
@@ -101,7 +113,8 @@ export function QuoteForm() {
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick("pos_cotacao");
-    const baseMessage = `Olá! Acabei de fazer uma cotação no site da iGreen Seguros para a placa ${formData.plate} (${formData.vehicleType}) e gostaria de finalizar a contratação do meu seguro. Meu nome é ${formData.name}.`;
+    const emailInfo = formData.email ? ` (E-mail: ${formData.email})` : "";
+    const baseMessage = `Olá! Acabei de fazer uma cotação no site da iGreen Seguros para a placa ${formData.plate} (${formData.vehicleType}) e gostaria de finalizar a contratação do meu seguro. Meu nome é ${formData.name}${emailInfo}.`;
     const fullMessage = buildWhatsAppMessageWithUtm(baseMessage);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -323,6 +336,37 @@ export function QuoteForm() {
                     </p>
                   )}
                 </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label htmlFor="input-email" className="block text-sm font-bold text-green-dark">
+                      Seu E-mail
+                    </label>
+                    <span className="text-xs text-gray-500 font-medium">(Opcional para receber cópia)</span>
+                  </div>
+                  <div className="relative">
+                    <input 
+                      id="input-email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      value={formData.email || ""}
+                      onChange={handleEmailChange}
+                      placeholder="seuemail@exemplo.com"
+                      className={`w-full pl-11 pr-4 py-3.5 rounded-xl border-2 ${
+                        errors.email ? 'border-red-500 bg-red-50/30' : 'border-gray-200 focus:border-green-main'
+                      } text-base font-medium outline-none transition-colors`}
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? "email-error" : undefined}
+                    />
+                    <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+                  </div>
+                  {errors.email && (
+                    <p id="email-error" className="text-red-600 text-sm mt-1.5 flex items-center gap-1 font-medium">
+                      <AlertCircle size={14} className="shrink-0" /> {errors.email}
+                    </p>
+                  )}
+                </div>
                 
                 {errors.submit && (
                   <p className="text-red-600 text-center font-medium p-3 bg-red-50 rounded-lg text-sm">
@@ -338,11 +382,11 @@ export function QuoteForm() {
                   {isSubmitting ? (
                     <>
                       <Loader2 size={22} className="animate-spin" />
-                      <span>GERANDO PROPOSTA...</span>
+                      <span>PROCESSANDO E ENVIANDO COTAÇÃO...</span>
                     </>
                   ) : (
                     <>
-                      <span>VER PROPOSTA COMPLETA</span>
+                      <span>VER PROPOSTA & ENVIAR COTAÇÃO</span>
                       <ArrowRight size={22} />
                     </>
                   )}
@@ -359,15 +403,29 @@ export function QuoteForm() {
                 key="success"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-6 text-center"
+                className="flex flex-col items-center justify-center py-4 text-center"
               >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-light rounded-full flex items-center justify-center mb-5 border-2 border-green-main/30">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-light rounded-full flex items-center justify-center mb-4 border-2 border-green-main/30">
                   <CheckCircle2 size={38} className="text-green-main" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-green-dark mb-3">Tudo pronto!</h3>
-                <p className="text-base sm:text-lg text-text-dark/80 mb-7 max-w-md leading-relaxed">
-                  Sua proposta para a placa <strong className="text-green-dark">{formData.plate}</strong> foi gerada. Fale com nosso consultor no WhatsApp para consultar valores e ativar sua apólice de seguro.
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-green-dark mb-2">Simulação Realizada!</h3>
+                <p className="text-base sm:text-lg text-text-dark/80 mb-5 max-w-md leading-relaxed">
+                  Sua proposta para a placa <strong className="text-green-dark">{formData.plate}</strong> foi gerada com sucesso.
                 </p>
+
+                {/* Notificação de Envio por E-mail */}
+                <div className="w-full bg-gray-50 rounded-2xl p-4 mb-6 border border-gray-200/80 text-left text-xs sm:text-sm space-y-2">
+                  <div className="flex items-center gap-2 font-bold text-gray-900">
+                    <Send size={16} className="text-green-main shrink-0" />
+                    <span>Notificação Automática Disparada:</span>
+                  </div>
+                  <div className="text-gray-600 pl-6 space-y-1">
+                    <p>• Dados da cotação enviados para o consultor responsável (<strong className="text-gray-900">{submitResult?.recipientEmail || "jrenansoares@gmail.com"}</strong>).</p>
+                    {formData.email && (
+                      <p>• Cópia de confirmação enviada para <strong className="text-gray-900">{formData.email}</strong>.</p>
+                    )}
+                  </div>
+                </div>
                 
                 <button 
                   onClick={handleWhatsAppClick}

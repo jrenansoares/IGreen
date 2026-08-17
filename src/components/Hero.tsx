@@ -18,10 +18,20 @@ export function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bp-purple/10 text-bp-purple text-sm font-semibold mb-6"
+            className="flex flex-wrap items-center gap-3 mb-6"
           >
-            <ShieldCheck size={16} className="text-bp-orange" />
-            <span>Garantido pela BP Seguradora</span>
+            <div className="h-9 px-3.5 bg-white rounded-full shadow-xs border border-gray-200 flex items-center justify-center">
+              <img 
+                src="/iGreen seguros verde.png" 
+                alt="iGreen Seguros" 
+                className="max-h-5 max-w-[130px] w-auto object-contain"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-bp-purple/10 text-bp-purple text-sm font-semibold border border-bp-purple/20">
+              <ShieldCheck size={16} className="text-bp-orange" />
+              <span>Garantido pela BP Seguradora</span>
+            </div>
           </motion.div>
           
           <motion.h1 

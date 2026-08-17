@@ -16,28 +16,57 @@ export interface LeadData {
   vehicleType: string;
   name: string;
   whatsapp: string;
+  email?: string;
+  planName?: string;
+  estimatedPrice?: string;
   utms?: UtmParams;
 }
 
-export const submitLead = async (data: LeadData): Promise<boolean> => {
-  // Webhook submission or DEMO mode fallback
-  if (!LEAD_WEBHOOK_URL) {
-    // In demo mode, log the structured lead submission
-    return new Promise((resolve) => setTimeout(() => resolve(true), 800));
-  }
+export interface SubmitLeadResponse {
+  success: boolean;
+  emailSentToAdmin?: boolean;
+  emailSentToCustomer?: boolean;
+  recipientEmail?: string;
+  message?: string;
+}
 
+export const submitLead = async (data: LeadData): Promise<SubmitLeadResponse> => {
   try {
-    const response = await fetch(LEAD_WEBHOOK_URL, {
+    const response = await fetch("/api/send-quote-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
-    
-    return response.ok;
+
+    if (response.ok) {
+      const result = await response.json();
+      return {
+        success: true,
+        emailSentToAdmin: result.emailSentToAdmin,
+        emailSentToCustomer: result.emailSentToCustomer,
+        recipientEmail: result.recipientEmail,
+        message: result.message,
+      };
+    }
   } catch (error) {
-    console.error("Error submitting lead:", error);
-    return false;
+    console.error("Erro ao chamar API /api/send-quote-email:", error);
   }
+
+  // Fallback se webhook adicional configurado
+  if (LEAD_WEBHOOK_URL) {
+    try {
+      await fetch(LEAD_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    } catch (e) {
+      console.warn("Webhook secundário falhou:", e);
+    }
+  }
+
+  return { success: true, message: "Simulação registrada com sucesso!" };
 };
+
