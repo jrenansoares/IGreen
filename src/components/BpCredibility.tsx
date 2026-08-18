@@ -43,6 +43,10 @@ export function BpCredibility() {
                 <img 
                   src="/BP - SEGURADORA.png" 
                   alt="BP Seguradora" 
+                  width={4000}
+                  height={2250}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-6 max-w-[90px] object-contain"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />

@@ -119,37 +119,23 @@ export function Home() {
         
         <div className="max-w-6xl mx-auto text-center">
           
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200/80 shadow-xs mb-6"
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200/80 shadow-xs mb-6">
             <Sparkles size={16} className="text-green-main" />
             <span className="text-xs sm:text-sm font-bold text-gray-700 tracking-wide uppercase">
               Ecossistema de Soluções iGreen
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.15] mb-6 tracking-tight"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.15] mb-6 tracking-tight">
             Escolha o serviço ideal para <br className="hidden sm:inline"/>
             <span className="bg-gradient-to-r from-green-dark via-green-main to-bp-purple bg-clip-text text-transparent">
               economizar, conectar e proteger
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed"
-          >
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
             Selecione uma das verticais abaixo para acessar a página exclusiva com simulações, planos detalhados e atendimento personalizado.
-          </motion.p>
+          </p>
         </div>
 
         {/* 3 Main Choice Cards */}
@@ -179,6 +165,10 @@ export function Home() {
                       <img 
                         src={service.logo} 
                         alt={service.logoAlt} 
+                        width={210}
+                        height={56}
+                        loading="lazy"
+                        decoding="async"
                         className="max-h-8 max-w-full w-auto h-auto object-contain"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
@@ -308,6 +298,10 @@ export function Home() {
               <img 
                 src="/gustavo-lima.png" 
                 alt="Gusttavo Lima - Embaixador iGreen" 
+                width={1024}
+                height={1536}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
             </div>

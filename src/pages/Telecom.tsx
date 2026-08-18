@@ -208,52 +208,36 @@ export function Telecom() {
             {/* Coluna Esquerda: Proposta de Valor e Ação */}
             <div className="lg:col-span-7 text-center lg:text-left">
               {/* Badge de Marca */}
-              <motion.div 
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md"
-              >
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md">
                 <div className="h-6 px-2 bg-white rounded-full flex items-center justify-center">
                   <img 
                     src="/iGreen Telecom -  Logo Verde.png" 
                     alt="iGreen Telecom" 
+                    width={856}
+                    height={339}
+                    decoding="async"
                     className="max-h-4 max-w-[100px] w-auto object-contain"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>
                 <span className="text-xs font-bold text-green-light uppercase tracking-wider">Telefonia 5G • Sem Fidelidade</span>
-              </motion.div>
+              </div>
 
               {/* Título de Alto Impacto */}
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black mb-5 tracking-tight leading-[1.15]"
-              >
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black mb-5 tracking-tight leading-[1.15]">
                 Planos de Celular 5G com <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-main via-emerald-400 to-green-light">
                   Internet que Acumula
                 </span>
-              </motion.h1>
+              </h1>
 
               {/* Proposta de Valor Objetiva */}
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15 }}
-                className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl font-normal leading-relaxed"
-              >
+              <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl font-normal leading-relaxed">
                 Tenha <strong className="text-white">internet que acumula</strong> para o mês seguinte, <strong className="text-white">WhatsApp 100% livre</strong> sem gastar franquia, ligações ilimitadas e ativação imediata via <strong className="text-white">eSIM Digital</strong> ou Chip Físico.
-              </motion.p>
+              </p>
 
               {/* Botões de Ação Direta */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-col sm:flex-row items-center gap-4 mb-8"
-              >
+              <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
                 <button
                   onClick={scrollToPlans}
                   className="w-full sm:w-auto bg-green-main hover:bg-green-dark text-white text-base font-bold px-8 py-4 rounded-2xl shadow-xl shadow-green-main/30 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2.5 cursor-pointer"
@@ -268,7 +252,7 @@ export function Telecom() {
                   <MessageCircle size={20} className="text-[#25D366]" />
                   Ativar no WhatsApp
                 </button>
-              </motion.div>
+              </div>
 
               {/* Pilares de Confiança Rápidos */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left pt-6 border-t border-white/10">
@@ -307,7 +291,7 @@ export function Telecom() {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     onError={() => setVideoFailed(true)}
                     aria-label="Vídeo oficial iGreen Telecom"
                   >

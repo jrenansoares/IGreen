@@ -113,52 +113,36 @@ export function Energia() {
 
         <div className="max-w-6xl mx-auto relative z-10 text-center">
           {/* Badge Oficial */}
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md"
-          >
+          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md">
             <div className="h-6 px-2.5 bg-white rounded-full flex items-center justify-center">
               <img 
                 src="/iGreen - Conexão Green.png" 
                 alt="iGreen Energy" 
+                width={856}
+                height={339}
+                decoding="async"
                 className="max-h-4 max-w-[110px] w-auto object-contain"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
             <span className="text-xs font-bold text-green-light uppercase tracking-wider">Energia Solar por Assinatura • Sem Obras</span>
-          </motion.div>
+          </div>
 
           {/* Headline Principal */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.15]"
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.15]">
             Economize até 18% na sua conta de luz <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-solar via-green-light to-green-main">
               sem gastar 1 centavo com placas
             </span>
-          </motion.h1>
+          </h1>
 
           {/* Subtítulo */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto font-normal leading-relaxed"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
             A iGreen conecta seu imóvel a fazendas solares de energia solar compartilhada. A energia renovável é injetada na sua distribuidora e vira <strong className="text-white">desconto automático mensal na conta de luz</strong>. Sem obras, sem investimento inicial e sem fidelidade.
-          </motion.p>
+          </p>
 
           {/* Botões Hero */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <button
               onClick={scrollToSimulator}
               className="w-full sm:w-auto bg-yellow-solar hover:bg-yellow-400 text-gray-950 text-base sm:text-lg font-black px-8 py-4 rounded-2xl shadow-xl shadow-yellow-solar/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2.5 cursor-pointer"
@@ -173,7 +157,7 @@ export function Energia() {
               <MessageCircle size={20} className="text-[#25D366]" />
               Enviar Conta de Luz no WhatsApp
             </button>
-          </motion.div>
+          </div>
 
           {/* 4 Pilares Rápidos */}
           <motion.div 

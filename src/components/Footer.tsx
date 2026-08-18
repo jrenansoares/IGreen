@@ -16,6 +16,10 @@ export function Footer() {
                 <img 
                   src="/iGreen seguros verde.png" 
                   alt="iGreen Seguros" 
+                  width={1080}
+                  height={332}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-6 max-w-full w-auto object-contain" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }} 
                 />
@@ -24,6 +28,10 @@ export function Footer() {
                 <img 
                   src="/iGreen - Conexão Green.png" 
                   alt="iGreen Energy" 
+                  width={856}
+                  height={339}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-6 max-w-full w-auto object-contain" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }} 
                 />
@@ -32,6 +40,10 @@ export function Footer() {
                 <img 
                   src="/iGreen Telecom -  Logo Verde.png" 
                   alt="iGreen Telecom" 
+                  width={856}
+                  height={339}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-6 max-w-full w-auto object-contain" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }} 
                 />
@@ -40,6 +52,10 @@ export function Footer() {
                 <img 
                   src="/BP - SEGURADORA.png" 
                   alt="BP Seguradora" 
+                  width={4000}
+                  height={2250}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-6 max-w-full w-auto object-contain" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }} 
                 />

@@ -55,6 +55,9 @@ export function Header() {
               <img 
                 src={currentLogo.src} 
                 alt="iGreen" 
+                width={40}
+                height={40}
+                decoding="async"
                 className="h-10 w-10 object-contain"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -77,6 +80,9 @@ export function Header() {
                 key={currentLogo.src}
                 src={currentLogo.src} 
                 alt={currentLogo.alt} 
+                width={175}
+                height={36}
+                decoding="async"
                 className="max-h-9 max-w-[175px] w-auto object-contain" 
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';

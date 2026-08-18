@@ -21,15 +21,14 @@ export function Hero() {
         <div className="w-full lg:w-[54%] flex flex-col items-start z-10">
           
           {/* Badges Bar */}
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-wrap items-center gap-2.5 mb-5"
-          >
+          <div className="flex flex-wrap items-center gap-2.5 mb-5">
             <div className="h-8 px-3 bg-white rounded-full shadow-xs border border-gray-200/90 flex items-center justify-center">
               <img 
                 src="/iGreen seguros verde.png" 
                 alt="iGreen Seguros" 
+                width={1080}
+                height={332}
+                decoding="async"
                 className="max-h-4 max-w-[110px] w-auto object-contain"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
@@ -39,38 +38,23 @@ export function Hero() {
               <ShieldCheck size={14} className="text-bp-orange shrink-0" />
               <span>Operado pela BP Seguradora • SUSEP 01546</span>
             </div>
-          </motion.div>
+          </div>
           
           {/* Main Headline */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-gray-900 leading-[1.12] mb-5 tracking-tight"
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-gray-900 leading-[1.12] mb-5 tracking-tight">
             Seguro Auto mensal e <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-green-dark via-green-main to-bp-purple bg-clip-text text-transparent">
               sem fidelidade.
             </span>
-          </motion.h1>
+          </h1>
           
           {/* Subheadline */}
-          <motion.p 
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-base sm:text-lg lg:text-xl text-gray-600 mb-7 max-w-xl leading-relaxed font-normal"
-          >
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-7 max-w-xl leading-relaxed font-normal">
             Proteja seu veículo com o <strong className="text-gray-900 font-bold">iGreen Seguros</strong>, operado pela <strong className="text-bp-purple font-bold">BP Seguradora</strong>. Pagamento mensal, contratação digital, assistência 24 horas e <strong className="text-green-dark font-bold">liberdade para cancelar quando quiser</strong>.
-          </motion.p>
+          </p>
           
           {/* Main CTA */}
-          <motion.div 
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.22 }}
-            className="flex flex-col w-full sm:w-auto mb-6"
-          >
+          <div className="flex flex-col w-full sm:w-auto mb-6">
             <button 
               onClick={scrollToForm}
               className="bg-bp-orange hover:bg-bp-orange/90 active:scale-[0.99] text-white px-8 py-4 sm:py-4.5 rounded-2xl font-black text-lg sm:text-xl transition-all shadow-lg hover:shadow-2xl hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-3 group"
@@ -81,7 +65,7 @@ export function Hero() {
             <p className="text-xs text-gray-500 font-medium mt-2.5 text-center sm:text-left">
               🔒 Cotação sem compromisso • Seguro mensal • Sem fidelidade
             </p>
-          </motion.div>
+          </div>
           
           {/* Value Props Matrix */}
           <motion.div 
@@ -122,7 +106,7 @@ export function Hero() {
                 muted
                 loop
                 playsInline
-                preload="auto"
+                preload="metadata"
                 onError={() => setVideoFailed(true)}
                 aria-label="Vídeo oficial BP Seguradora com Gusttavo Lima"
               >
@@ -145,6 +129,10 @@ export function Hero() {
                     <img 
                       src="/gustavo-lima.png" 
                       alt="Gusttavo Lima - Embaixador iGreen Seguros e BP Seguradora" 
+                      width={1024}
+                      height={1536}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
