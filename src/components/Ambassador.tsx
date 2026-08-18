@@ -66,7 +66,7 @@ export function Ambassador() {
                 className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-yellow-solar/40 to-green-main/40 flex items-center justify-center border-4 border-yellow-solar/50 shadow-[0_0_50px_rgba(255,201,40,0.2)] overflow-hidden"
               >
                 <img 
-                  src="/gustavo-lima.webp" 
+                  src="/gustavo-lima.png" 
                   alt="Gusttavo Lima - Embaixador iGreen Seguros" 
                   width={512}
                   height={768}

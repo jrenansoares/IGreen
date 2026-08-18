@@ -12,14 +12,14 @@ export function Header() {
   const getCurrentLogo = () => {
     switch (location.pathname) {
       case "/telecom":
-        return { src: "/iGreen Telecom -  Logo Verde.webp", alt: "iGreen Telecom", label: "Telecom", isSymbolOnly: false };
+        return { src: "/iGreen Telecom -  Logo Verde.png", alt: "iGreen Telecom", label: "Telecom", isSymbolOnly: false };
       case "/energia":
-        return { src: "/iGreen - Conexão Green.webp", alt: "iGreen Energy", label: "Energy", isSymbolOnly: false };
+        return { src: "/iGreen - Conexão Green.png", alt: "iGreen Energy", label: "Energy", isSymbolOnly: false };
       case "/seguros":
-        return { src: "/iGreen seguros verde.webp", alt: "iGreen Seguros", label: "Seguros", isSymbolOnly: false };
+        return { src: "/iGreen seguros verde.png", alt: "iGreen Seguros", label: "Seguros", isSymbolOnly: false };
       default:
         // Na Home ("/"), exibir apenas o símbolo da iGreen
-        return { src: "/Cópia de G - Verde.webp", alt: "iGreen", label: "", isSymbolOnly: true };
+        return { src: "/Cópia de G - Verde.png", alt: "iGreen", label: "", isSymbolOnly: true };
     }
   };
 

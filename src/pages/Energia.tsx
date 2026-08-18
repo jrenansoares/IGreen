@@ -116,7 +116,7 @@ export function Energia() {
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md">
             <div className="h-6 px-2.5 bg-white rounded-full flex items-center justify-center">
               <img 
-                src="/iGreen - Conexão Green.webp" 
+                src="/iGreen - Conexão Green.png" 
                 alt="iGreen Energy" 
                 width={428}
                 height={170}

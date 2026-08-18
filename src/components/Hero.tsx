@@ -24,7 +24,7 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-2.5 mb-5">
             <div className="h-8 px-3 bg-white rounded-full shadow-xs border border-gray-200/90 flex items-center justify-center">
               <img 
-                src="/iGreen seguros verde.webp" 
+                src="/iGreen seguros verde.png" 
                 alt="iGreen Seguros" 
                 width={540}
                 height={166}
@@ -127,7 +127,7 @@ export function Hero() {
                 <div className="flex flex-col items-center my-auto">
                   <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-yellow-solar shadow-[0_0_35px_rgba(255,201,40,0.4)] mb-3 bg-white">
                     <img 
-                      src="/gustavo-lima.webp" 
+                      src="/gustavo-lima.png" 
                       alt="Gusttavo Lima - Embaixador iGreen Seguros e BP Seguradora" 
                       width={512}
                       height={768}

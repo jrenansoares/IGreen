@@ -24,7 +24,7 @@ export function Home() {
       badge: "Garantia BP Seguradora • SUSEP",
       badgeColor: "bg-bp-purple/10 text-bp-purple border-bp-purple/20",
       title: "iGreen Seguros",
-      logo: "/iGreen seguros verde.webp",
+      logo: "/iGreen seguros verde.png",
       logoAlt: "Logo iGreen Seguros",
       subtitle: "A escolha do Embaixador Gusttavo Lima",
       description: "Proteção completa contra roubo, furto, colisão e assistência 24h em todo o Brasil. Sem análise de perfil ou condutor e até 3x mais econômico.",
@@ -47,7 +47,7 @@ export function Home() {
       badge: "Desconto Direto na Conta",
       badgeColor: "bg-green-main/10 text-green-dark border-green-main/20",
       title: "iGreen Energy",
-      logo: "/iGreen - Conexão Green.webp",
+      logo: "/iGreen - Conexão Green.png",
       logoAlt: "Logo iGreen Energy",
       subtitle: "Economize na luz sem gastar com placas",
       description: "Reduza o valor da sua fatura mensal consumindo energia limpa de fazendas solares parceiras, sem obras, sem taxa de adesão e sem fidelidade.",
@@ -70,7 +70,7 @@ export function Home() {
       badge: "Planos a partir de R$ 49,90/mês",
       badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
       title: "iGreen Telecom",
-      logo: "/iGreen Telecom -  Logo Verde.webp",
+      logo: "/iGreen Telecom -  Logo Verde.png",
       logoAlt: "Logo iGreen Telecom",
       subtitle: "Conexão de alta velocidade sem limites",
       description: "Planos móveis modernos com ultravelocidade 5G, WhatsApp ilimitado, internet cumulativa que não expira e a maior cobertura do Brasil.",
@@ -296,7 +296,7 @@ export function Home() {
           <div className="shrink-0 flex flex-col items-center">
             <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-yellow-solar shadow-2xl bg-white">
               <img 
-                src="/gustavo-lima.webp" 
+                src="/gustavo-lima.png" 
                 alt="Gusttavo Lima - Embaixador iGreen" 
                 width={512}
                 height={768}

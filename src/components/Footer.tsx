@@ -14,7 +14,7 @@ export function Footer() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-md">
               <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
                 <img 
-                  src="/iGreen seguros verde.webp" 
+                  src="/iGreen seguros verde.png" 
                   alt="iGreen Seguros" 
                   width={540}
                   height={166}
@@ -26,7 +26,7 @@ export function Footer() {
               </div>
               <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
                 <img 
-                  src="/iGreen - Conexão Green.webp" 
+                  src="/iGreen - Conexão Green.png" 
                   alt="iGreen Energy" 
                   width={428}
                   height={170}
@@ -38,7 +38,7 @@ export function Footer() {
               </div>
               <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
                 <img 
-                  src="/iGreen Telecom -  Logo Verde.webp" 
+                  src="/iGreen Telecom -  Logo Verde.png" 
                   alt="iGreen Telecom" 
                   width={428}
                   height={170}
@@ -50,7 +50,7 @@ export function Footer() {
               </div>
               <div className="h-11 w-full bg-white rounded-xl px-2.5 py-1.5 flex items-center justify-center shadow-xs border border-white/10">
                 <img 
-                  src="/BP - SEGURADORA.webp" 
+                  src="/BP - SEGURADORA.png" 
                   alt="BP Seguradora" 
                   width={800}
                   height={450}
