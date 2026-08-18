@@ -211,10 +211,10 @@ export function Telecom() {
               <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md">
                 <div className="h-6 px-2 bg-white rounded-full flex items-center justify-center">
                   <img 
-                    src="/iGreen Telecom -  Logo Verde.png" 
+                    src="/iGreen Telecom -  Logo Verde.webp" 
                     alt="iGreen Telecom" 
-                    width={856}
-                    height={339}
+                    width={428}
+                    height={170}
                     decoding="async"
                     className="max-h-4 max-w-[100px] w-auto object-contain"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}

@@ -116,10 +116,10 @@ export function Energia() {
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 h-9 rounded-full mb-6 shadow-md">
             <div className="h-6 px-2.5 bg-white rounded-full flex items-center justify-center">
               <img 
-                src="/iGreen - Conexão Green.png" 
+                src="/iGreen - Conexão Green.webp" 
                 alt="iGreen Energy" 
-                width={856}
-                height={339}
+                width={428}
+                height={170}
                 decoding="async"
                 className="max-h-4 max-w-[110px] w-auto object-contain"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}

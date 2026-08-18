@@ -41,10 +41,10 @@ export function BpCredibility() {
               </div>
               <div className="h-10 px-3 bg-white rounded-xl border border-gray-200 flex items-center justify-center shrink-0">
                 <img 
-                  src="/BP - SEGURADORA.png" 
+                  src="/BP - SEGURADORA.webp" 
                   alt="BP Seguradora" 
-                  width={4000}
-                  height={2250}
+                  width={800}
+                  height={450}
                   loading="lazy"
                   decoding="async"
                   className="max-h-6 max-w-[90px] object-contain"
