@@ -42,6 +42,7 @@ function PageLoader() {
   );
 }
 
+// Performance deployment synchronized
 export default function App() {
   return (
     <BrowserRouter>
